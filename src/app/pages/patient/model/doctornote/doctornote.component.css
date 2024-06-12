@@ -1,0 +1,32 @@
+.container {
+    max-width: 500px;
+  }
+  .card {
+    border: none;
+    border-radius: 8px;
+  }
+  .card-header {
+    background-color: #f8f9fa;
+    border-bottom: none;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  .card-body {
+    padding: 2rem;
+  }
+  .form-control {
+    height: 230px;
+    resize: none;
+  }
+  .btn-primary {
+    margin-top: 10px;
+    border-radius: 8px;
+    background-color: #39ce96;
+  }
+  .btn-secondaryaa {
+    margin-left: 10px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: solid 1px #ccc;
+  }

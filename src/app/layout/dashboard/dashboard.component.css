@@ -1,0 +1,27 @@
+.main-content {
+    padding: 20px;
+}
+
+.main-content span{
+    color:  #a3a3a3;
+}
+
+.card-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    height: 200px;
+    border-radius: 10.5px;
+    box-shadow: 0 15.7px 34px 0 rgba(16, 30, 115, 0.06);
+    border: solid 2px #d1ffee;
+    background-color: #fff;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}

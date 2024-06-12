@@ -1,0 +1,22 @@
+.sidebar {
+    height: 100vh;
+    background-color: #39ce96; 
+}
+
+.sidebar .nav-link {
+    margin-top: 20px;
+    padding: 15px;
+    font-family: "Mulish";
+    font-weight: 500;
+    color: white;
+}
+
+.sidebar .nav-link:hover {
+    background-color: #22a976; 
+}
+
+.sidebar .nav-link.active {
+    background-color: #22a976;
+}
+
+

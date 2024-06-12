@@ -1,0 +1,200 @@
+<div
+  class="modal fade bd-example-modal-lg"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          Book Appointment (Dr. Stephan Edward)
+        </h5>
+      </div>
+      <div class="modal-body">
+        <span>Choose a date</span>
+        <div class="date-card mt-2">
+          <div class="mb-3 selector">
+            <select id="monthSelect" class="form-select">
+              <option value="" selected>Month</option>
+              <option value="January">January</option>
+              <option value="February">February</option>
+              <option value="March">March</option>
+              <option value="April">April</option>
+              <option value="May">May</option>
+              <option value="June">June</option>
+              <option value="July">July</option>
+              <option value="August">August</option>
+              <option value="September">September</option>
+              <option value="October">October</option>
+              <option value="November">November</option>
+              <option value="December">December</option>
+            </select>
+            <select id="yearSelect" class="form-select">
+              <option value="" selected>Year</option>
+              <option value="2024">2024</option>
+              <option value="2025">2025</option>
+              <option value="2026">2026</option>
+              <option value="2027">2027</option>
+              <option value="2028">2028</option>
+              <option value="2029">2029</option>
+              <option value="2030">2030</option>
+            </select>
+          </div>
+          <div class="calendar">
+            <div class="row">
+              <div class="col text-center">M</div>
+              <div class="col text-center">Tu</div>
+              <div class="col text-center">W</div>
+              <div class="col text-center">Th</div>
+              <div class="col text-center">F</div>
+              <div class="col text-center">Sa</div>
+              <div class="col text-center">Su</div>
+            </div>
+            <div class="row">
+              <div class="col text-center text-muted">29</div>
+              <div class="col text-center text-muted">30</div>
+              <div class="col text-center text-muted">31</div>
+              <div class="col text-center">1</div>
+              <div class="col text-center">2</div>
+              <div class="col text-center">3</div>
+              <div class="col text-center">4</div>
+            </div>
+            <div class="row">
+              <div class="col text-center">5</div>
+              <div class="col text-center">6</div>
+              <div class="col text-center">7</div>
+              <div class="col text-center highlighted">8</div>
+              <div class="col text-center">9</div>
+              <div class="col text-center">10</div>
+              <div class="col text-center">11</div>
+            </div>
+            <div class="row">
+              <div class="col text-center">12</div>
+              <div class="col text-center">13</div>
+              <div class="col text-center">14</div>
+              <div class="col text-center">15</div>
+              <div class="col text-center">16</div>
+              <div class="col text-center">17</div>
+              <div class="col text-center">18</div>
+            </div>
+            <div class="row">
+              <div class="col text-center">19</div>
+              <div class="col text-center">20</div>
+              <div class="col text-center">21</div>
+              <div class="col text-center">22</div>
+              <div class="col text-center">23</div>
+              <div class="col text-center">24</div>
+              <div class="col text-center">25</div>
+            </div>
+            <div class="row">
+              <div class="col text-center">26</div>
+              <div class="col text-center selected">27</div>
+              <div class="col text-center">28</div>
+              <div class="col text-center">29</div>
+              <div class="col text-center">30</div>
+              <div class="col text-center text-muted">1</div>
+              <div class="col text-center text-muted">2</div>
+            </div>
+            <div class="row">
+              <div class="col text-center text-muted">3</div>
+              <div class="col text-center text-muted">4</div>
+              <div class="col text-center text-muted">5</div>
+              <div class="col text-center text-muted">6</div>
+              <div class="col text-center text-muted">7</div>
+              <div class="col text-center text-muted">8</div>
+              <div class="col text-center text-muted">9</div>
+            </div>
+          </div>
+          <div class="container mt-5">
+            <h5>Choose Time</h5>
+            <div class="time-selector">
+              <div class="row align-items-center mb-3">
+                <div class="col-auto">
+                  <strong>Morning</strong>
+                </div>
+                <div class="col">
+                  <button class="btn btn-outline-secondary time-btn">
+                    09:00 AM
+                  </button>
+                  <button class="btn btn-outline-secondary time-btn">
+                    09:30 AM
+                  </button>
+                  <button class="btn btn-danger time-btn">10:00 AM</button>
+                  <button class="btn btn-outline-secondary time-btn">
+                    10:30 AM
+                  </button>
+                  <button class="btn btn-success time-btn">11:00 AM</button>
+                </div>
+                <div class="col-auto text-right">
+                  <button class="btn btn-outline-secondary nav-btn">
+                    &lt;
+                  </button>
+                  <button class="btn btn-outline-secondary nav-btn">
+                    &gt;
+                  </button>
+                </div>
+              </div>
+              <div class="row align-items-center">
+                <div class="col-auto">
+                  <strong>Evening</strong>
+                </div>
+                <div class="col">
+                  <button class="btn btn-danger time-btn">02:00 PM</button>
+                  <button class="btn btn-danger time-btn">02:30 PM</button>
+                  <button class="btn btn-outline-secondary time-btn">
+                    03:00 PM
+                  </button>
+                  <button class="btn btn-outline-secondary time-btn">
+                    03:30 PM
+                  </button>
+                  <button class="btn btn-outline-secondary time-btn">
+                    04:00 PM
+                  </button>
+                </div>
+                <div class="col-auto text-right">
+                  <button class="btn btn-outline-secondary nav-btn">
+                    &lt;
+                  </button>
+                  <button class="btn btn-outline-secondary nav-btn">
+                    &gt;
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container mt-5">
+            <div class="row align-items-center">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="selectDoctor">Select Patient</label>
+                  <select class="form-control" id="selectDoctor">
+                    <option>Josephn Steve</option>
+                    <option>Aman Thakur</option>
+                    <option>Dr. Jane Smith</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6 text-right">
+                <div>
+                  <strong>Appointment Details</strong>
+                </div>
+                <div class="appointment-details">
+                  <span class="date-time">27 August 2024, 11:00 AM</span><br />
+                  <span class="doctor-name">Dr. Stephen Edward</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+img {
+    max-height: 600px;
+}
+
+.login-container {
+    width: 400px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.login-container img {
+    display: block;
+    margin-bottom: 50px;
+}
+
+.login-container h2 {
+    text-align: start;
+    margin-bottom: 10px;
+}
+
+.login-container p {
+    text-align: start;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.form-check-inline .form-check-input {
+    margin-top: 6px;
+}
+
+.mb-3 input {
+    border-radius: 8px;
+    border: solid 1px #d1daeb;
+    background-color: #fff;
+}
+
+.form-check-inline .form-check-label {
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+.form-check-input:checked {
+    background-color: #00d084;
+    border-color: #00d084;
+}
+
+.btn-signin {
+    width: 100%;
+    background-color: #00d084;
+    border-color: #00d084;
+}
+
+.btn-signin:hover {
+    background-color: #00b574;
+    border-color: #00b574;
+}
