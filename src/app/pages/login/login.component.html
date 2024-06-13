@@ -1,29 +1,29 @@
 <div class="container-fluid vh-100 d-flex justify-content-center align-items-center">
-    <div class="row w-100 justify-content-center">
-        <div class="login-container">
-            <img src="../../../assets/logo-aeroqube-png.svg" alt="aeroqube logo">
-            <h2>Sign In</h2>
-            <p>Please enter login details</p>
-            <form>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email Address</label>
-                    <input type="email" class="form-control" id="email" placeholder="eg. aman.com">
-                </div>
-                <div class="mb-3">
-                    <label for="password" class="form-label">Password (OTP)</label>
-                    <input type="password" class="form-control" id="password" placeholder="">
-                </div>
-                <div class="mb-3 form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="role" id="receptionist" value="receptionist" checked>
-                    <label class="form-check-label" for="receptionist">Receptionist</label>
-                    <input class="form-check-input" type="radio" name="role" id="doctor" value="doctor">
-                    <label class="form-check-label" for="doctor">Doctor</label>
-                </div>
-                <button type="submit" class="btn btn-primary btn-signin">Sign In</button>
-            </form>
-        </div>
-        <div class="col-md-6 d-none d-md-flex justify-content-center align-items-center">
-            <img src="../../../assets/sign-in.svg" class="img-fluid" alt="Calendar">
-        </div>
-    </div>
+  <div class="row w-100 justify-content-center">
+      <div class="login-container">
+          <img src="../../../assets/logo-aeroqube-png.svg" alt="aeroqube logo">
+          <h2>Sign In</h2>
+          <p>Please enter login details</p>
+          <form action="#">
+              <div class="mb-3">
+                  <label for="email" class="form-label">Email Address</label>
+                  <input type="email" class="form-control" id="email" placeholder="eg. aman.com" [(ngModel)] = "loginObj.email" name="email">
+              </div>
+              <div class="mb-3">
+                  <label for="password" class="form-label">Password (OTP)</label>
+                  <input type="password" class="form-control" id="password" placeholder=""  [(ngModel)] = "loginObj.password" name="password">
+              </div>
+              <div class="mb-3 form-check form-check-inline">
+                  <input class="form-check-input" type="radio"  id="receptionist" value="receptionist" checked>
+                  <label class="form-check-label" for="receptionist">Receptionist</label>
+                  <input class="form-check-input" type="radio"  id="doctor" value="doctor">
+                  <label class="form-check-label" for="doctor">Doctor</label>
+              </div>
+              <button type="button"  class="btn btn-primary btn-signin" (click)="onLogin()">Sign In</button>
+          </form>
+      </div>
+      <div class="col-md-6 d-none d-md-flex justify-content-center align-items-center">
+          <img src="../../../assets/sign-in.svg" class="img-fluid" alt="Calendar">
+      </div>
+  </div>
 </div>
