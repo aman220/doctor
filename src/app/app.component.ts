@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
     if (this.isSignupRoute()) {
       console.log(this.isSignupRoute())
     } else {
-      // this.checkLogin();
+      this.checkLogin();
     }
   }
 

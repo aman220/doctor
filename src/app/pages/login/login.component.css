@@ -55,3 +55,13 @@ img {
     background-color: #00b574;
     border-color: #00b574;
 }
+
+.signup-link{
+    margin-top: 10px;
+    color: #00b574;
+    font-weight: bold;
+}
+
+.signup-link:hover{
+    cursor: pointer;
+}
