@@ -1,153 +1,73 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-<!-- Button trigger modal -->
-
 <app-model></app-model>
 <app-previousvisit></app-previousvisit>
 <app-doctornote></app-doctornote>
 <app-staffnote></app-staffnote>
-  
+<app-addpatientmodel></app-addpatientmodel>
 <div class="container mt-5">
-    <div class="d-flex justify-content-between align-items-center">
-        <h2 class="patient-list-header">Patient List</h2>
-        <button class="btn btn-success add-patient-btn">Add Patient</button>
+  <div class="d-flex justify-content-between align-items-center">
+    <h2 class="patient-list-header">Patient List</h2>
+    <button class="icon-btn" type="button" data-bs-toggle="modal" data-bs-target="#addpatient">Add Patient</button>
+  </div>
+  <input type="text" class="form-control mb-3 mt-3" placeholder="Search" />
+
+  <!-- Loader -->
+  <div class="glow-div">
+    <div *ngIf="loading" class="spinner-grow" role="status">
+      <span class="sr-only">Loading...</span>
     </div>
-    <input type="text" class="form-control mb-3 mt-3" placeholder="Search" />
-    <table class="table table-bordered">
-        <thead class="head">
-            <tr>
-                <th>Patient ID</th>
-                <th>Name</th>
-                <th>Age</th>
-                <th>Consultation Date</th>
-                <th>Next Appointment Date</th>
-                <th>Diagnostic Code</th>
-                <th>Doctor Notes</th>
-                <th>Staff Notes</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>PH564735</td>
-                <td>Peter Parker</td>
-                <td>36 yr</td>
-                <td>Feb. 8, 2024</td>
-                <td>Feb. 9, 2025</td>
-                <td>
-                    <button class="icon-btn"><i class="fas fa-file-alt"></i></button>
-                </td>
-                <td>
-                    <button class="icon-btn"><i class="fas fa-sticky-note"></i></button>
-                </td>
-                <td>
-                    <button class="icon-btn"><i class="fas fa-plus-circle"></i></button>
-                </td>
-            </tr>
-            <tr>
-                <td>PH985317</td>
-                <td>Jason Statham</td>
-                <td>42 yr</td>
-                <td>Jan. 12, 2024</td>
-                <td>
-                    <button class="icon-btn" type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-calendar-alt"></i></button>
-                    
-                </td>
-                <td>
-                    <button class="icon-btn" type="button"  data-bs-toggle="modal" data-bs-target="#previousvisit"><i class="fas fa-file-alt"></i></button>
-                </td>
-                <td>
-                    <button class="icon-btn" type="button"  data-bs-toggle="modal" data-bs-target="#doctornote"><i class="fas fa-sticky-note"></i></button>
-                </td>
-                <td>
-                    <button class="icon-btn" type="button"  data-bs-toggle="modal" data-bs-target="#staffnote"><i class="fas fa-plus-circle"></i></button>
-                </td>
-            </tr>
-            <tr>
-                <td>PH167402</td>
-                <td>Rebecca Larson</td>
-                <td>28 yr</td>
-                <td>Mar. 22, 2024</td>
-                <td>
-                    <button class="icon-btn"><i class="fas fa-calendar-alt"></i></button>
-                </td>
-                <td>
-                    <button class="icon-btn"><i class="fas fa-file-alt"></i></button>
-                </td>
-                <td>
-                    <button class="icon-btn"><i class="fas fa-sticky-note"></i></button>
-                </td>
-                <td>
-                    <button class="icon-btn"><i class="fas fa-plus-circle"></i></button>
-                </td>
-            </tr>
-            <tr>
-                <td>PH001644</td>
-                <td>Pierre Valenzuela</td>
-                <td>41 yr</td>
-                <td>Jun. 6, 2024</td>
-                <td>
-                    <button class="icon-btn"><i class="fas fa-calendar-alt"></i></button>
-                </td>
-                <td>
-                    <button class="icon-btn"><i class="fas fa-file-alt"></i></button>
-                </td>
-                <td>
-                    <button class="icon-btn"><i class="fas fa-sticky-note"></i></button>
-                </td>
-                <td>
-                    <button class="icon-btn"><i class="fas fa-plus-circle"></i></button>
-                </td>
-            </tr>
-            <tr>
-                <td>PH991744</td>
-                <td>Jesse E. Alston</td>
-                <td>27 yr</td>
-                <td>Sept. 3, 2024</td>
-                <td>
-                    <button class="icon-btn"><i class="fas fa-calendar-alt"></i></button>
-                </td>
-                <td>
-                    <button class="icon-btn"><i class="fas fa-file-alt"></i></button>
-                </td>
-                <td>
-                    <button class="icon-btn"><i class="fas fa-sticky-note"></i></button>
-                </td>
-                <td>
-                    <button class="icon-btn"><i class="fas fa-plus-circle"></i></button>
-                </td>
-            </tr>
-            <tr>
-                <td>PH882744</td>
-                <td>Nakia J. Davis</td>
-                <td>46 yr</td>
-                <td>Jan. 18, 2024</td>
-                <td>Jan. 19, 2025</td>
-                <td>
-                    <button class="icon-btn"><i class="fas fa-file-alt"></i></button>
-                </td>
-                <td>
-                    <button class="icon-btn"><i class="fas fa-sticky-note"></i></button>
-                </td>
-                <td>
-                    <button class="icon-btn"><i class="fas fa-plus-circle"></i></button>
-                </td>
-            </tr>
-            <tr>
-                <td>PH442878</td>
-                <td>Peter Parker</td>
-                <td>52 yr</td>
-                <td>Feb. 9, 2024</td>
-                <td>Feb. 10, 2025</td>
-                <td>
-                    <button class="icon-btn"><i class="fas fa-file-alt"></i></button>
-                </td>
-                <td>
-                    <button class="icon-btn"><i class="fas fa-sticky-note"></i></button>
-                </td>
-                <td>
-                    <button class="icon-btn"><i class="fas fa-plus-circle"></i></button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+  </div>
+
+  <!-- Table -->
+  <table *ngIf="!loading" class="table table-bordered">
+    <thead class="head">
+      <tr>
+        <th>Patient ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Consultation Date</th>
+        <th>Next Appointment Date</th>
+        <th>Diagnostic Code</th>
+        <th>Doctor Notes</th>
+        <th>Staff Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let patient of patients">
+        <td>{{ patient.phid }}</td>
+        <td>{{ patient.name }}</td>
+        <td>{{ patient.age }} yr</td>
+        <td>{{ patient.previous_appointment ? (patient.previous_appointment | date: 'MMM. d, yyyy') : 'N/A' }}</td>
+        <td>
+          <ng-container *ngIf="patient.next_appointment; else naButton2">
+            {{ patient.next_appointment.appointment_date_to | date: 'MMM. d, yyyy' }}
+          </ng-container>
+          <ng-template #naButton2>
+            <button class="icon-btn" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+              (click)="openModal(patient.phid)"><i class="fas fa-calendar-alt"></i></button>
+          </ng-template>
+        </td>
+        <td>
+          <button class="icon-btn"><i class="fas fa-file-alt"></i></button>
+        </td>
+        <td>
+          <ng-container *ngIf="patient.comments; else naButton3">
+            <button class="icon-btn" data-bs-toggle="modal" data-bs-target="#doctornote"
+              (click)="openCommentModal(patient.phid)"><i class="fas fa-sticky-note"></i>
+              {{patient.comments.length}}</button>
+          </ng-container>
+          <ng-template #naButton3>
+            <button class="icon-btn" data-bs-toggle="modal" data-bs-target="#doctornote"
+              (click)="openCommentModal(patient.phid)"><i class="fas fa-sticky-note"></i></button>
+          </ng-template>
+        </td>
+        <td>
+          <button class="icon-btn" data-bs-toggle="modal" data-bs-target="#staffnote"
+            (click)="openStaffModal(patient.phid)"><i class="fas fa-plus-circle"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
+
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>

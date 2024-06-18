@@ -1,15 +1,15 @@
-<ng-container *ngIf="!isLoginRoute()">
-    <app-header></app-header>
-    <div class="container-fluid">
-      <div class="row">
-        <app-sidebar class="col-md-2" style="padding-left: 0px;"></app-sidebar>
-        <main class="col-md-10 ms-sm-auto px-4">
-          <router-outlet></router-outlet>
-        </main>
-      </div>
+<ng-container *ngIf="!isLoginRoute() && !isSignupRoute()">
+  <app-header></app-header>
+  <div class="container-fluid">
+    <div class="row">
+      <app-sidebar class="col-md-2" style="padding-left: 0;"></app-sidebar>
+      <main class="col-md-10 ms-sm-auto mt-5">
+        <router-outlet></router-outlet>
+      </main>
     </div>
-  </ng-container>
-  <ng-container *ngIf="isLoginRoute()">
-    <router-outlet></router-outlet>
-  </ng-container>
-  
+  </div>
+</ng-container>
+
+<ng-container *ngIf="isLoginRoute() || isSignupRoute()">
+  <router-outlet></router-outlet>
+</ng-container>

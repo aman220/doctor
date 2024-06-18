@@ -16,33 +16,16 @@
         <span>Choose a date</span>
         <div class="date-card mt-2">
           <div class="mb-3 selector">
-            <select id="monthSelect" class="form-select">
-              <option value="" selected>Month</option>
-              <option value="January">January</option>
-              <option value="February">February</option>
-              <option value="March">March</option>
-              <option value="April">April</option>
-              <option value="May">May</option>
-              <option value="June">June</option>
-              <option value="July">July</option>
-              <option value="August">August</option>
-              <option value="September">September</option>
-              <option value="October">October</option>
-              <option value="November">November</option>
-              <option value="December">December</option>
+            <select id="monthSelect" class="form-select" [(ngModel)]="selectedMonth">
+              <option value="" disabled selected>Month</option>
+              <option *ngFor="let month of months" [value]="month">{{ month }}</option>
             </select>
-            <select id="yearSelect" class="form-select">
-              <option value="" selected>Year</option>
-              <option value="2024">2024</option>
-              <option value="2025">2025</option>
-              <option value="2026">2026</option>
-              <option value="2027">2027</option>
-              <option value="2028">2028</option>
-              <option value="2029">2029</option>
-              <option value="2030">2030</option>
+            <select id="yearSelect" class="form-select" [(ngModel)]="selectedYear">
+              <option value="" disabled selected>Year</option>
+              <option *ngFor="let year of years" [value]="year">{{ year }}</option>
             </select>
           </div>
-          <div class="calendar">
+          <div class="calendar" (click)="onDateSelect($event)">
             <div class="row">
               <div class="col text-center">M</div>
               <div class="col text-center">Tu</div>
@@ -65,7 +48,7 @@
               <div class="col text-center">5</div>
               <div class="col text-center">6</div>
               <div class="col text-center">7</div>
-              <div class="col text-center highlighted">8</div>
+              <div class="col text-center">8</div>
               <div class="col text-center">9</div>
               <div class="col text-center">10</div>
               <div class="col text-center">11</div>
@@ -109,31 +92,21 @@
           </div>
           <div class="container mt-5">
             <h5>Choose Time</h5>
-            <div class="time-selector">
+            <div class="time-selector" (click)="onTimeSelect($event)">
               <div class="row align-items-center mb-3">
                 <div class="col-auto">
                   <strong>Morning</strong>
                 </div>
                 <div class="col">
-                  <button class="btn btn-outline-secondary time-btn">
-                    09:00 AM
-                  </button>
-                  <button class="btn btn-outline-secondary time-btn">
-                    09:30 AM
-                  </button>
+                  <button class="btn btn-outline-secondary time-btn">09:00 AM</button>
+                  <button class="btn btn-outline-secondary time-btn">09:30 AM</button>
                   <button class="btn btn-danger time-btn">10:00 AM</button>
-                  <button class="btn btn-outline-secondary time-btn">
-                    10:30 AM
-                  </button>
-                  <button class="btn btn-success time-btn">11:00 AM</button>
+                  <button class="btn btn-outline-secondary time-btn">10:30 AM</button>
+                  <button class="btn btn-outline-secondary time-btn">11:00 AM</button>
                 </div>
                 <div class="col-auto text-right">
-                  <button class="btn btn-outline-secondary nav-btn">
-                    &lt;
-                  </button>
-                  <button class="btn btn-outline-secondary nav-btn">
-                    &gt;
-                  </button>
+                  <button class="btn btn-outline-secondary nav-btn">&lt;</button>
+                  <button class="btn btn-outline-secondary nav-btn">&gt;</button>
                 </div>
               </div>
               <div class="row align-items-center">
@@ -143,23 +116,13 @@
                 <div class="col">
                   <button class="btn btn-danger time-btn">02:00 PM</button>
                   <button class="btn btn-danger time-btn">02:30 PM</button>
-                  <button class="btn btn-outline-secondary time-btn">
-                    03:00 PM
-                  </button>
-                  <button class="btn btn-outline-secondary time-btn">
-                    03:30 PM
-                  </button>
-                  <button class="btn btn-outline-secondary time-btn">
-                    04:00 PM
-                  </button>
+                  <button class="btn btn-outline-secondary time-btn">03:00 PM</button>
+                  <button class="btn btn-outline-secondary time-btn">03:30 PM</button>
+                  <button class="btn btn-outline-secondary time-btn">04:00 PM</button>
                 </div>
                 <div class="col-auto text-right">
-                  <button class="btn btn-outline-secondary nav-btn">
-                    &lt;
-                  </button>
-                  <button class="btn btn-outline-secondary nav-btn">
-                    &gt;
-                  </button>
+                  <button class="btn btn-outline-secondary nav-btn">&lt;</button>
+                  <button class="btn btn-outline-secondary nav-btn">&gt;</button>
                 </div>
               </div>
             </div>
@@ -168,11 +131,10 @@
             <div class="row align-items-center">
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="selectDoctor">Select Patient</label>
-                  <select class="form-control" id="selectDoctor">
-                    <option>Josephn Steve</option>
-                    <option>Aman Thakur</option>
-                    <option>Dr. Jane Smith</option>
+                  <label for="selectPatient">Select Patient</label>
+                  <select class="form-control" id="selectPatient" (change)="onPatientSelect($event)">
+                    <option value="" disabled selected>Select Patient</option>
+                    <option *ngFor="let patient of patients" [value]="patient.phid">{{ patient.name }}</option>
                   </select>
                 </div>
               </div>
@@ -181,8 +143,13 @@
                   <strong>Appointment Details</strong>
                 </div>
                 <div class="appointment-details">
-                  <span class="date-time">27 August 2024, 11:00 AM</span><br />
-                  <span class="doctor-name">Dr. Stephen Edward</span>
+                  <span *ngIf="selectedDate && selectedTime || selectedPatient" class="date-time">
+                    {{ selectedDate }},{{selectedMonth}} {{ selectedTime }}
+                  </span>
+                  <br>
+                  <span *ngIf="selectedPatient" class="patient-name">
+                    {{ selectedPatient.name }}
+                  </span>
                 </div>
               </div>
             </div>
@@ -190,10 +157,9 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-          Close
-        </button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button *ngIf="!isSaving" type="button" class="btn btn-primary" (click)="saveChanges()">Save changes</button>
+        <mat-spinner *ngIf="isSaving" diameter="30"></mat-spinner>
       </div>
     </div>
   </div>

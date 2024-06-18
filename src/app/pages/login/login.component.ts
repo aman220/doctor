@@ -30,6 +30,7 @@ export class LoginComponent {
     }
     this.authService.login(userCreds).subscribe((res:any)=>{
         localStorage.setItem('id', res.response.id);
+        localStorage.setItem("name" , res.response.name);
         this.router.navigateByUrl('')
     })
   }

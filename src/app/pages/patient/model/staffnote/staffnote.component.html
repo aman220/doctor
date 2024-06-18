@@ -20,17 +20,28 @@
           <div class="card">
             <div class="card-header">Staff Notes</div>
             <div class="card-body">
-              <form>
+              <form (ngSubmit)="submitStaffNote()">
                 <div class="form-group">
                   <label for="doctorNotes">Add Notes</label>
                   <textarea
                     class="form-control"
                     id="doctorNotes"
                     rows="5"
+                    [(ngModel)]="StaffNote"
+                    name="staffnote"
                   ></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-                <button type="button" class="btn btn-secondaryaa">Close</button>
+                <div style="display: flex; flex-direction: row; gap: 1rem;">
+                  <mat-spinner *ngIf="isSaving" diameter="30" style="margin-top: 10px;"></mat-spinner>
+                  <button
+                    type="submit"
+                    class="btn btn-primary"
+                    *ngIf="!isSaving"
+                  >
+                    Submit
+                  </button>
+                  <button type="button" class="btn btn-secondaryaa">Close</button>
+                </div>
               </form>
             </div>
           </div>

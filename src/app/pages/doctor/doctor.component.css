@@ -80,3 +80,10 @@
     color: rgb(13 253 131);
     text-decoration: none;
 }
+
+.glow-div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

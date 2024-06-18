@@ -1,0 +1,57 @@
+<div
+  class="modal fade"
+  id="addpatient"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="addpatientLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addpatientmodel">Add Patient</h5>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="onAdd()">
+          <div class="form-group">
+            <label for="patientID">ID</label>
+            <input
+              type="text"
+              class="form-control"
+              id="patientID"
+              placeholder="Enter patient's ID"
+              [(ngModel)]="patientObj.id"
+              name="patientID"
+            />
+            <label for="patientName">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="patientName"
+              placeholder="Enter patient's name"
+              [(ngModel)]="patientObj.name"
+              name="patientName"
+            />
+          </div>
+          <div class="form-group">
+            <label for="patientAge">Age</label>
+            <input
+              type="text"
+              class="form-control"
+              id="patientAge"
+              placeholder="Enter patient's age"
+              [(ngModel)]="patientObj.age"
+              name="patientAge"
+            />
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+              Close
+            </button>
+            <button type="submit" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -6,13 +6,13 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root' // app module main inject kr diya hai yha se 
 })
-export class AuthService {
-  private apiUrl = 'http://3.111.71.63:4000/user/get';
+export class createPatientService {
+  private apiUrl = 'http://3.111.71.63:4000/patient/add';
 
   constructor(private http: HttpClient) { } // jab bhi mere object class ka instance banega tb usko http client ka instance chaiye hoga
 
-  login(userCreds: Object): Observable<any> {
+  Addpatient(patientCreds: Object): Observable<any> {
    
-    return this.http.post<any>(this.apiUrl, userCreds);
+    return this.http.post<any>(this.apiUrl, patientCreds);
   }
 }
