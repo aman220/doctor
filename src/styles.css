@@ -32,4 +32,16 @@ body {
     font-size: large;
   }
 
+  .mat-mdc-menu-item-text{
+    display: flex;
+    color:#56e0ac;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .mat-mdc-menu-content{
+    background-color: white !important;
+  }
+  
+
   

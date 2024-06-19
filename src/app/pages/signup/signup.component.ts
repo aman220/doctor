@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { Router } from '@angular/router';
@@ -16,12 +16,20 @@ import { of } from 'rxjs';
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css'],
 })
-export class SignupComponent {
+export class SignupComponent implements OnInit {
   signupObj: Signup;
   isSaving: boolean = false;
+  passwordFieldType: string = 'password';
 
   constructor(private authService: SignupService, private router: Router , private _snackBar: MatSnackBar) {
     this.signupObj = new Signup();
+  }
+  ngOnInit(): void {
+    let id = localStorage.getItem("id");
+    if(id){
+      this.openSnackBar("Already Sign Up")
+      this.router.navigateByUrl('')
+    }
   }
 
   openSnackBar(message: string) {
@@ -58,6 +66,10 @@ export class SignupComponent {
     console.error('signup error', error.error);
     this.isSaving = false;
     this.openSnackBar(error.error.message)
+  }
+
+  togglePasswordVisibility() {
+    this.passwordFieldType = this.passwordFieldType === 'password' ? 'text' : 'password';
   }
 }
 

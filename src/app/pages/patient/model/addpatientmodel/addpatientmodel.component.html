@@ -5,6 +5,7 @@
   role="dialog"
   aria-labelledby="addpatientLabel"
   aria-hidden="true"
+  data-bs-dismiss="model"
 >
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -42,13 +43,14 @@
               placeholder="Enter patient's age"
               [(ngModel)]="patientObj.age"
               name="patientAge"
+              
             />
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
               Close
             </button>
-            <button type="submit" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+            <button type="submit" class="btn btn-primary" >Save changes</button>
           </div>
         </form>
       </div>

@@ -83,6 +83,10 @@
     color: white;
     border-radius: 50px;
   }
+  .selectedtime {
+    background-color: #39ce96;
+    color: white;
+  }
 
   .time-selector .btn-success {
     background-color: #39ce96;

@@ -1,10 +1,91 @@
-img {
-    max-height: 600px;
+.container-fluid {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    height: 100vh;
+    width: 100%;
 }
+
+.leftdiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.rightdiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.rightdiv img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.password-container {
+    position: relative;
+}
+
+.eye-button {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.eye-button i {
+    font-size: 1.2em;
+}
+
+
+
+@media (max-width: 768px) {
+    .container-fluid {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .leftdiv {
+        height: 100vh;
+    }
+
+    .rightdiv {
+        display: none;
+    }
+}
+
+.container-fluid .toplogo {
+    position: absolute;
+    top: 10px;
+    left: 100px;
+}
+
+.container-fluid  h3 {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.13px;
+    text-align: left;
+    color: #39ce96;
+}
+
+
 
 .login-container {
     width: 400px;
-    padding: 20px;
     background-color: #fff;
     border-radius: 8px;
 }
@@ -15,21 +96,30 @@ img {
 }
 
 .login-container h2 {
-    text-align: start;
+    font-size: 30px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #0f0532;
     margin-bottom: 10px;
 }
 
 .login-container p {
     text-align: start;
     color: #888;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
+
 
 .form-check-inline .form-check-input {
     margin-top: 6px;
 }
 
 .mb-3 input {
+    padding: 15px;
     border-radius: 8px;
     border: solid 1px #d1daeb;
     background-color: #fff;
@@ -38,6 +128,18 @@ img {
 .form-check-inline .form-check-label {
     margin-left: 10px;
     margin-right: 20px;
+
+}
+
+.mb-3 .form-label {
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #0f0532;
 }
 
 .form-check-input:checked {
@@ -56,12 +158,12 @@ img {
     border-color: #00b574;
 }
 
-.signup-link{
+.signup-link {
     margin-top: 10px;
     color: #00b574;
     font-weight: bold;
 }
 
-.signup-link:hover{
+.signup-link:hover {
     cursor: pointer;
 }

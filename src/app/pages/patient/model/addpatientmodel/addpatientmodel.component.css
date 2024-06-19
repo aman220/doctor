@@ -1,0 +1,105 @@
+/* Base styles for the modal */
+.modal-dialog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100% - 1rem);
+  }
+  
+  .modal-content {
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    background: linear-gradient(to bottom right, #ffffff, #f8f9fa);
+  }
+  
+  /* Header styling */
+  .modal-header {
+    border-bottom: none;
+    padding: 1rem 1.5rem;
+    background: linear-gradient(to bottom right, #56e0ac, #2be89f);
+    color: #fff;
+  }
+  
+  .modal-title {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  
+  .btn-close {
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    color: #fff;
+  }
+  
+  /* Body styling */
+  .modal-body {
+    padding: 1.5rem;
+    font-size: 1rem;
+    color: #343a40;
+  }
+  
+  /* Form styling */
+ 
+  
+  label {
+    font-weight: bold;
+    color: #343a40;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-control {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    padding: 0.5rem;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .form-control:focus {
+    border-color: #56e0ac;
+    box-shadow: 0 0 5px rgba(0, 255, 153, 0.5);
+  }
+  
+  /* Footer styling */
+  .modal-footer {
+    border-top: none;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  /* Button styling */
+  .btn {
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: #fff;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+  }
+  
+  .btn-primary {
+    background-color: #56e0ac;
+    border: #2be89f;
+    color: #fff;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #56e0ac;
+    border-color: grey;
+    transform: scale(1.05);
+  }
+  

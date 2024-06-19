@@ -1,10 +1,19 @@
 .sidebar {
     height: 100vh;
-    background-color: #39ce96; 
+    background-color: #39ce96;
     position: fixed;
-    width: 15%;
+    width: 16%;
     margin-top: 40px;
+    transition: transform 0.3s ease, width 0.3s ease;
 }
+
+
+
+.collapsed {
+    width: 0;
+    transform: translateX(-100%);
+}
+
 
 .sidebar .nav-link {
     margin-top: 20px;
@@ -15,11 +24,9 @@
 }
 
 .sidebar .nav-link:hover {
-    background-color: #22a976; 
+    background-color: #22a976;
 }
 
 .sidebar .nav-link.active {
     background-color: #22a976;
 }
-
-

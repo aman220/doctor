@@ -1,7 +1,9 @@
-<div class="container-fluid vh-100 d-flex justify-content-center align-items-center">
-    <div class="row w-100 justify-content-center">
-        <div class="login-container">
+<div class="container-fluid">
+    <div class="leftdiv">
+        <div class="toplogo">
             <img src="../../../assets/logo-aeroqube-png.svg" alt="aeroqube logo">
+        </div>
+        <div class="login-container">
             <h2>Sign In</h2>
             <p>Please enter login details</p>
             <form action="#">
@@ -12,21 +14,26 @@
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Password (OTP)</label>
-                    <input type="password" class="form-control" id="password" placeholder=""
-                        [(ngModel)]="loginObj.password" name="password">
+                    <div class="password-container">
+                        <input [type]="passwordFieldType" class="form-control" id="password" placeholder=""
+                            [(ngModel)]="loginObj.password" name="password">
+                        <button type="button" (click)="togglePasswordVisibility()" class="eye-button">
+                            <i [ngClass]="passwordFieldType === 'password' ? 'fas fa-eye' : 'fas fa-eye-slash'"></i>
+                        </button>
+                    </div>                    
                 </div>
                 <div style="display: flex; justify-content: center;">
-                    <mat-spinner *ngIf="isSaving" diameter="30" style="margin-top: 10px;"></mat-spinner>
+                    <mat-spinner *ngIf="isSaving" diameter="30" style="margin-top: 10px; color: #56e0ac;" color="#56e0ac"></mat-spinner>
                 </div>
-                <button type="button" class="btn btn-primary btn-signin" (click)="onLogin()" *ngIf="!isSaving">Login
-                    In</button>
+                <button type="button" class="btn btn-primary btn-signin" (click)="onLogin()" *ngIf="!isSaving">Sign In</button>
                 <div class="signup-link">
                     <a (click)="goToSignup()">Don't have an account? Sign up</a>
                 </div>
             </form>
         </div>
-        <div class="col-md-6 d-none d-md-flex justify-content-center align-items-center">
-            <img src="../../../assets/sign-in.svg" class="img-fluid" alt="Calendar">
-        </div>
+    </div>
+    <div class="rightdiv">
+        <h3>Appointment Schedular POC</h3>
+        <img src="../../../assets/sign-in.svg" alt="Calendar">
     </div>
 </div>

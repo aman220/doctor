@@ -48,7 +48,7 @@
           </ng-template>
         </td>
         <td>
-          <button class="icon-btn"><i class="fas fa-file-alt"></i></button>
+          <button class="icon-btn" (click)="open(patient.appointments[0].diagnostic_code)"><i class="fas fa-file-alt"></i></button>
         </td>
         <td>
           <ng-container *ngIf="patient.comments; else naButton3">

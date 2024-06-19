@@ -22,13 +22,18 @@ export class LoginComponent implements OnInit {
   loginObj: Login;
   isSaving: boolean = false;
   loginError: string | null = null;
+  passwordFieldType: string = 'password';
 
   constructor(private fb: FormBuilder,private authService: AuthService, private router: Router ,private _snackBar: MatSnackBar, private roleservice : RoleService) {
     this.loginObj = new Login();
   }
 
   ngOnInit(): void {
-    
+    let id = localStorage.getItem("id");
+    if(id){
+      this.openSnackBar("Already Sign In")
+      this.router.navigateByUrl('')
+    }
   }
 
   openSnackBar(message: string) {
@@ -69,6 +74,10 @@ export class LoginComponent implements OnInit {
 
   goToSignup() {
     this.router.navigate(['/signup']);
+  }
+
+  togglePasswordVisibility() {
+    this.passwordFieldType = this.passwordFieldType === 'password' ? 'text' : 'password';
   }
 }
 

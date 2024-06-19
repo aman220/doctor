@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import {MatButtonModule} from '@angular/material/button';
 import { RefreshService } from '../../services/refress.service';
+import { DiagnosComponent } from './model/diagnos/diagnos.component';
 
 @Component({
   selector: 'app-patient',
@@ -69,4 +70,10 @@ export class PatientComponent implements OnInit {
     const modalRef = this.modalService.open(StaffnoteComponent);
     modalRef.componentInstance.phid = phid;
   }
+
+  open(name : string) {
+		const modalRef = this.modalService.open(DiagnosComponent);
+		modalRef.componentInstance.name = name;
+    console.log(name)
+	}
 }

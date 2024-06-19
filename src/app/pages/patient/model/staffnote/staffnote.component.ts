@@ -8,7 +8,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 @Component({
   selector: 'app-staffnote',
   standalone: true,
-  imports: [FormsModule , CommonModule , MatProgressSpinnerModule],
+  imports: [FormsModule, CommonModule, MatProgressSpinnerModule],
   templateUrl: './staffnote.component.html',
   styleUrl: './staffnote.component.css'
 })
@@ -18,28 +18,34 @@ export class StaffnoteComponent {
   StaffNote: string;
   isSaving: boolean = false;
 
-  constructor(private doctorNotesService: StaffNotesService ,private _snackBar: MatSnackBar) {
-    this.patientId = this.phid; 
+  constructor(private staffNotesService: StaffNotesService, private _snackBar: MatSnackBar) {
+    this.patientId = this.phid;
     this.StaffNote = '';
   }
 
   openSnackBar(message: string) {
-    this._snackBar.open(message , "Close" ,{
-      duration:3000
-    })
+    this._snackBar.open(message, "Close", {
+      duration: 3000
+    });
   }
 
   submitStaffNote() {
+    if (!this.StaffNote.trim()) {
+      this.openSnackBar("Note is empty. Please add a note.");
+      return;
+    }
+
     this.isSaving = true;
-    this.doctorNotesService.addSraffNote(this.patientId, this.StaffNote).subscribe(
+    this.staffNotesService.addSraffNote(this.patientId, this.StaffNote).subscribe(
       (res: any) => {
         console.log('Note added successfully:', res);
         this.isSaving = false;
-        this.openSnackBar("Note Added Sucess")
-        this.StaffNote = ''; 
+        this.openSnackBar("Note Added Successfully");
+        this.StaffNote = '';
       },
       (error: any) => {
         console.error('Error adding note:', error);
+        this.isSaving = false;
       }
     );
   }

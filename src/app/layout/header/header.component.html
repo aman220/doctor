@@ -1,12 +1,20 @@
 <app-logoutmodel></app-logoutmodel>
-<header class="navbar navbar-expand-lg navbar-light  header">
-  <div class="menu-icon">
+<header class="navbar navbar-expand-lg navbar-light header">
+  <div class="menu-icon" (click)="toggleSidebar()">
     <img src="../../../assets/menu.svg" />
   </div>
-  <span class="role">{{role}}</span>
+
   <div class="navbar-nav">
-   
-    <a class="nav-link"  data-bs-toggle="modal" data-bs-target="#logoutmodel">Logout</a>
-    <img src="../../../assets/logout.svg" />
+    <button mat-button [matMenuTriggerFor]="menu" class="role">
+      <i class="fas fa-user-md" style="margin-right: 5px;"></i>{{ role }}
+    </button>
+    <mat-menu #menu="matMenu" class="nav-menu">
+      <button mat-menu-item>
+        <a class="nav-link" data-bs-toggle="modal" data-bs-target="#logoutmodel"
+          >Logout</a
+        >
+        <img src="../../../assets/logout.svg" />
+      </button>
+    </mat-menu>
   </div>
 </header>
